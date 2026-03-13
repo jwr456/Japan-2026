@@ -16,7 +16,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:va
 .hdr h1{font-family:'DM Serif Display',serif;font-size:24px;letter-spacing:-.5px}
 .hdr p{font-size:11px;color:var(--mute);margin-top:2px}
 .tabs{display:flex;background:#e8e4da;border-radius:10px;padding:3px;margin-bottom:14px;position:sticky;top:0;z-index:100}
-.tab{flex:1;padding:8px 2px;border:none;border-radius:8px;background:transparent;color:var(--mute);font:inherit;font-size:12px;cursor:pointer;transition:all .2s}
+.tab{flex:1;padding:8px 2px;border:none;border-radius:8px;background:transparent;color:var(--mute);font:inherit;font-size:11px;cursor:pointer;transition:all .2s}
 .tab.on{background:var(--card);color:var(--ink);font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .hotels{display:flex;gap:5px;margin-bottom:10px;overflow-x:auto;padding-bottom:3px;-webkit-overflow-scrolling:touch}
 .hotels::-webkit-scrollbar{display:none}
@@ -29,11 +29,15 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:va
 .lsq{width:7px;height:7px;border-radius:2px;display:inline-block;margin-right:2px}
 .spacer{margin-left:auto}
 .cal{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
-.cb{background:rgba(255,253,247,.9);border:2px solid var(--bdr);border-radius:10px;padding:7px 3px;cursor:pointer;position:relative;transition:all .15s;min-height:65px;font-family:inherit;text-align:center}
+.cb{background:rgba(255,253,247,.9);border:2px solid var(--bdr);border-radius:10px;padding:7px 3px;cursor:pointer;position:relative;transition:all .15s;min-height:78px;font-family:inherit;text-align:center}
 .cb .dow{font-size:9px;opacity:.7}
 .cb .num{font-size:22px;font-weight:700;line-height:1.1;font-family:'DM Serif Display',serif}
 .cb .ct{font-size:7px;margin-top:1px;opacity:.8;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
 .cb .bd{position:absolute;top:3px;right:3px;width:7px;height:7px;border-radius:50%}
+.cb .wx{font-size:9px;margin-top:1px;opacity:.85;display:flex;align-items:center;justify-content:center;gap:2px}
+.wxr{background:#e3f2fd;border:1px solid #90caf9;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12px;line-height:1.5}
+.wxr .wxi{font-size:18px;vertical-align:middle;margin-right:4px}
+.skr{background:linear-gradient(135deg,#fce4ec,#f8bbd0);border:1px solid #f48fb1;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12px;line-height:1.5;color:#880e4f}
 .det{margin-top:12px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px;animation:fi .25s ease}
 @keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .dhdr{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
@@ -82,6 +86,21 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:va
 .pane{display:none}.pane.on{display:block;animation:fi .3s ease}
 .leaflet-popup-content{font-family:'DM Sans',sans-serif!important;font-size:12px!important}
 .tri{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent}
+.tcard{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px;margin-bottom:10px}
+.tcard h3{font-size:14px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.tcard .trow{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px dashed #e0dbd0;font-size:12px}
+.tcard .trow:last-child{border-bottom:none}
+.tcard .trow .lbl{color:var(--mute);font-size:10px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.tcard .trow .val{font-weight:600;font-size:13px}
+.tcard .trow .sub{font-size:10px;color:var(--mute)}
+.sakura{background:linear-gradient(135deg,#fce4ec,#f8bbd0);border:1px solid #f48fb1;border-radius:12px;padding:12px;margin-bottom:10px}
+.sakura h3{color:#880e4f;font-size:14px;margin-bottom:6px}
+.sakura .srow{display:flex;justify-content:space-between;padding:4px 0;font-size:12px;border-bottom:1px dashed #f48fb1}
+.sakura .srow:last-child{border-bottom:none}
+.wxcard{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px;margin-bottom:10px}
+.wxcard h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.wxcard p{font-size:12px;line-height:1.5;color:#555;margin-bottom:4px}
+.wxcard .tip{background:#fff8e1;border-radius:6px;padding:6px 8px;font-size:11px;margin-top:6px;line-height:1.4}
 .lock{position:fixed;inset:0;background:var(--paper);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;font-family:'DM Sans',system-ui,sans-serif}
 .lock h2{font-family:'DM Serif Display',serif;font-size:28px}
 .lock p{font-size:12px;color:var(--mute)}
@@ -105,6 +124,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:va
 <div id="pane-calendar" class="pane on"></div>
 <div id="pane-tokyo" class="pane"></div>
 <div id="pane-kyoto" class="pane"></div>
+<div id="pane-travel" class="pane"></div>
 </div>
 <script>
 // Password gate — simple hash so plaintext isn't in source
@@ -134,20 +154,25 @@ function gmAddr(addr){return 'https://www.google.com/maps/search/?api=1&query='+
 var BC={push:"#c0392b",hold:"#2980b9",flex:"#d4a017"},BL={push:"Push Late",hold:"Hold Steady",flex:"Flex"},CC={tokyo1:"#e67e22",tokyo2:"#8e44ad",kyoto:"#27ae60"},CL={tokyo1:"Tokyo I",tokyo2:"Tokyo II",kyoto:"Kyoto"};
 var HOTELS=[{c:"tokyo1",n:"Airbnb — Akasaka",sub:"Joel",d:"Mar 14–17",x:3},{c:"tokyo1",n:"ANA InterContinental",sub:"Others",d:"Mar 14–17",x:3},{c:"kyoto",n:"Ace Hotel Kyoto",sub:"Everyone",d:"Mar 17–19",x:2},{c:"tokyo2",n:"Hyatt Centric Ginza",sub:"Joel",d:"Mar 19–22",x:3},{c:"tokyo2",n:"Imperial Hotel",sub:"Others",d:"Mar 19–22",x:3}];
 var DAYS=[
-{date:"2026-03-14",dow:"Sat",label:"Night 1 · Arrival",badge:"push",city:"tokyo1",meals:[{type:"dinner",name:"Savoy",cuisine:"Neapolitan pizza",price:"¥1,000–3,600 / ~$7–24 pp",attire:"Anything goes",addr:"2-20-12 Azabu Juban, Minato-ku",lat:35.6535,lng:139.7365,hrs:"11:30–2:30 PM, 5:30–9:30 PM",note:"Wood-fired. Only Margherita & Marinara (+ off-menu tuna). 13-seat counter.",bk:1}],sleep:"Target 2–3 AM JST. Body thinks it's afternoon CDT. Don't fight it — Savoy is quick, whole night ahead.",after:[{n:"Gen Yamamoto",lat:35.6542,lng:139.735,d:"Omakase cocktail bar, 8 seats, seasonal fruit drinks. Reserve ahead."},{n:"Roppongi Hills Sky Deck",lat:35.6604,lng:139.7292,d:"Open-air rooftop at 270m. Stunning Tokyo Tower panorama."},{n:"Azabu-Juban Shotengai",lat:35.6547,lng:139.737,d:"Lantern-lit brick shopping street. Low-key first-night wander."},{n:"Late-night ramen",lat:35.6631,lng:139.7312,d:"Roppongi. Tonkotsu at 1 AM = rite of passage."}]},
-{date:"2026-03-15",dow:"Sun",label:"Night 2 · Jet-lagged",badge:"push",city:"tokyo1",pm:[{n:"Owl Cafe Akiba Fukurou",d:"45 min w/ 40 owls. Reservation only. Book ahead! 3 min from Akihabara Stn.",lat:35.6983,lng:139.771},{n:"Super Potato Akihabara",d:"Retro gaming holy grail. Famicom, Mega Drive, SNES, N64. 5th floor arcade. 3F–5F.",lat:35.6982,lng:139.771},{n:"Retro Game Camp",d:"Ground level. Great Sega Saturn/Dreamcast selection. Tax-free.",lat:35.6985,lng:139.77},{n:"Mandarake Akihabara",d:"Vintage Transformers, Gundam, tokusatsu. 8 floors of otaku paradise.",lat:35.6988,lng:139.771},{n:"BEEP",d:"Basement retro PC gaming. MSX, Sharp X68000, old arcade boards. Niche heaven.",lat:35.699,lng:139.77}],meals:[{type:"lunch",name:"Kamichiku",cuisine:"Handmade udon",price:"¥1,500–5,000 / ~$10–33 pp",attire:"Casual",addr:"2-14-18 Nezu, Bunkyo-ku",lat:35.721,lng:139.764,hrs:"11:30–2:30, 5:30–9:30 · ⚠ Closed Sun/Mon",note:"100-yr stone warehouse, garden view. Michelin Bib Gourmand. Confirm Sunday.",bk:1},{type:"dinner",name:"Kaikaya by the Sea",cuisine:"Izakaya seafood",price:"¥3,000–6,000 / ~$20–40 pp",attire:"Casual",addr:"23-7 Maruyamacho, Shibuya-ku",lat:35.658,lng:139.694,hrs:"5:30–11 PM",note:"Reggae, surfing décor, fresh catches. Beach-shack energy.",bk:1}],sleep:"Target 2–3 AM JST. Still jet-lagged. Kaikaya's energy segues into Shibuya nightlife.",after:[{n:"Shibuya Crossing at night",lat:35.6595,lng:139.7004,d:"More striking after 10 PM. Neon blazing."},{n:"Bar Ishinohana",lat:35.661,lng:139.697,d:"Shiitake-infused old fashioned with Hakushu whisky. 12 seats."},{n:"The Bellwood",lat:35.6625,lng:139.6955,d:"Kissaten-inspired with sushi counter. Bartender Atsushi Suzuki."},{n:"SG Club",lat:35.6615,lng:139.698,d:"Two-floor bar. Speakeasy basement. Famous piña colada. Until 2 AM+."}]},
-{date:"2026-03-16",dow:"Mon",label:"Night 3 · Omakase",badge:"hold",city:"tokyo1",pm:[{n:"Cat Cafe MoCHA Shibuya",d:"Two-floor cat cafe, 33 cats. ¥200/10 min. 8F, 3 min from Shibuya Crossing.",lat:35.6612,lng:139.6975},{n:"Nintendo TOKYO",d:"Official Nintendo store — Shibuya Parco 6F. Exclusive merch, demo stations.",lat:35.6618,lng:139.6983}],meals:[{type:"lunch",name:"Seirinkan",cuisine:"Neapolitan pizza",price:"¥1,000–2,500 / ~$7–17 pp",attire:"Anything goes",addr:"2-8-11 Aobadai, Meguro-ku",lat:35.6485,lng:139.693,hrs:"11:30–3 PM, 6–10 PM",note:"Legendary Nakameguro pizza. Sister to Savoy.",bk:1},{type:"dinner",name:"Sushi Masuda",cuisine:"Omakase sushi",price:"¥20,000–35,000 / ~$133–233 pp",attire:"Smart casual required",addr:"Azabu-Juban area, Minato-ku",lat:35.654,lng:139.7355,hrs:"8:00 PM reservation",note:"Elite omakase. No T-shirts/shorts/sandals/fragrances. ~2 hrs.",bk:1}],sleep:"Target 12:30–1 AM. Marquee dinner — be sharp. Finishes ~10 PM. One quiet drink, then bed.",after:[{n:"Hulotte",lat:35.653,lng:139.7345,d:"Azabu cocktail bar. Stone, warm wood, dim light. One nightcap."},{n:"Walk to Tokyo Tower",lat:35.6586,lng:139.7454,d:"15 min stroll. Illuminated nightly. Shiba Park is peaceful."}]},
-{date:"2026-03-17",dow:"Tue",label:"Night 4 · Kyoto",badge:"hold",city:"kyoto",meals:[{type:"lunch",name:"Hikinikutocome",cuisine:"Hamburg steak",price:"¥1,500–3,000 / ~$10–20 pp",attire:"Casual",addr:"Central Kyoto",lat:35.005,lng:135.762,hrs:"Lunch service",note:"Famous juicy minced-beef patty on sizzling iron plate.",bk:1},{type:"dinner",name:"Monk",cuisine:"Craft beer & creative",price:"¥3,000–6,000 / ~$20–40 pp",attire:"Smart casual",addr:"Central Kyoto",lat:35.011,lng:135.756,hrs:"Evening",note:"Belgian-influenced kitchen. Excellent rotating beer list.",bk:1}],sleep:"Target 12:30–1 AM. Mid-trip anchor. Full Kyoto day tomorrow. Don't let beer pull past 1 AM.",after:[{n:"Pontocho Alley",lat:35.006,lng:135.7705,d:"Iconic lantern-lit lane along Kamogawa River."},{n:"L'Escamoteur Bar",lat:35.0065,lng:135.77,d:"Hidden speakeasy. Magician-bartender, theatrical cocktails."},{n:"Kamogawa River walk",lat:35.0055,lng:135.771,d:"Riverbank between Sanjo & Shijo. Peaceful, free."}]},
-{date:"2026-03-18",dow:"Wed",label:"Night 5 · Last Kyoto",badge:"flex",city:"kyoto",meals:[{type:"lunch",name:"TBD",cuisine:"",price:"",attire:"",addr:"",hrs:"",note:"Open Kyoto lunch slot.",bk:0},{type:"dinner",name:"Nishiki Market area",cuisine:"Casual grazing",price:"¥2,000–5,000 / ~$13–33 pp",attire:"Anything goes",addr:"Nishikikoji-dori, Nakagyo-ku",lat:35.005,lng:135.7645,hrs:"Stalls early; izakayas later",note:"Kyoto's 'Kitchen.' Skewers, dashimaki, pickles, sake.",bk:1}],sleep:"Target 1–2 AM. Flex night. Good night to drift later — nudge toward late-night zone.",after:[{n:"Kiyamachi Street bar hop",lat:35.007,lng:135.769,d:"Along Takase River. Lively, younger crowd. Past midnight."},{n:"Gion → Yasaka Shrine",lat:35.0036,lng:135.7785,d:"Lantern-lit geisha district. Shrine open 24 hrs."},{n:"Bar Exploring Kyoto",lat:35.003,lng:135.776,d:"Hidden whisky bar in Gion back streets."}]},
-{date:"2026-03-19",dow:"Thu",label:"Night 6 · Ginza",badge:"hold",city:"tokyo2",meals:[{type:"lunch",name:"Open slot",cuisine:"",price:"",attire:"",addr:"",hrs:"",note:"Arrival from Kyoto. Grab something near hotel.",bk:0},{type:"dinner",name:"Sushi Kanesaka",cuisine:"Omakase sushi",price:"¥25,000–45,000 / ~$167–300 pp",attire:"Smart casual enforced",addr:"Ginza 8-chome, Chuo-ku",lat:35.6685,lng:139.761,hrs:"Evening reservation",note:"Premier Ginza omakase. Trained at Jiro. No T-shirts/shorts/sandals/fragrances.",bk:1}],sleep:"Target 12:30–1 AM. Flagship omakase. Be present. One refined nightcap max.",after:[{n:"Star Bar Ginza",lat:35.671,lng:139.765,d:"Legendary basement bar on Namiki-dori. Hand-carved ice."},{n:"Ginza Music Bar",lat:35.67,lng:139.7635,d:"4th floor listening bar. 3,000+ vinyl records."},{n:"Old Imperial Bar",lat:35.672,lng:139.758,d:"Frank Lloyd Wright-inspired. Century-old cocktail tradition."}]},
-{date:"2026-03-20",dow:"Fri",label:"Night 7 · Social",badge:"push",city:"tokyo2",pm:[{n:"Sanrio World Ginza",d:"World's largest Sanrio flagship. Two floors. Hello Kitty + 450 characters. Nishi Ginza Dept Store.",lat:35.6745,lng:139.763},{n:"Kyukyodo Ginza",d:"Incense & washi paper since 1663. Imperial Palace supplier. Beautiful small gifts.",lat:35.6718,lng:139.765},{n:"Ginza Sony Park",d:"New (2025) Sony building. Interactive exhibits, aibo robots, PlayStation demos.",lat:35.6718,lng:139.764}],meals:[{type:"lunch",name:"Iruca / Oreryu Ramen",cuisine:"Ramen",price:"¥1,000–1,500 / ~$7–10 pp",attire:"Anything goes",addr:"Various locations",lat:35.669,lng:139.764,hrs:"Lunch hours",note:"Iruca: creative tsukemen. Oreryu: clean shio (salt) broth.",bk:1},{type:"dinner",name:"With Shinji — poss. Masa Ishibashi",cuisine:"Omakase / TBD",price:"¥15,000–30,000 / ~$100–200 pp",attire:"Smart casual",addr:"TBD — Shinji's pick",hrs:"Flexible",note:"Social dinner. Go with the flow.",bk:1}],sleep:"Target 2–3 AM. Intentional drift-late. Pull body clock toward CDT. Invest in late-night Tokyo.",after:[{n:"Golden Gai (Shinjuku)",lat:35.694,lng:139.7035,d:"~200 tiny bars in six alleys. 5–8 seats each. Best 10 PM–2 AM."},{n:"Bar Trench / Triad / Tram",lat:35.6465,lng:139.7095,d:"Ebisu. Three connected bars. Absinthe cocktails. Asia's 50 Best."},{n:"Late-night ramen",lat:35.6924,lng:139.7013,d:"Fuunji tsukemen in Shinjuku, or wherever you end up."}]},
-{date:"2026-03-21",dow:"Sat",label:"Night 8 · Final",badge:"flex",city:"tokyo2",meals:[{type:"all day",name:"No reservations",cuisine:"",price:"",attire:"",addr:"",hrs:"",note:"Free day. Revisit a favorite, depachika food hall, or pack light.",bk:0}],sleep:"Target 2–3 AM+. SQ12 tomorrow afternoon. Staying up late = perfect return flight setup. Guilt-free.",after:[{n:"Revisit your favorite",d:"Golden Gai again, Star Bar, last Shibuya walk."},{n:"Kabukicho / Shinjuku",lat:35.6951,lng:139.7029,d:"Energy and neon all night."},{n:"Konbini beer + quiet walk",d:"Grab an Asahi. Simple farewell."}]}
+{date:"2026-03-14",dow:"Sat",label:"Night 1 · Arrival",badge:"push",city:"tokyo1",wx:{ic:"☀️",hi:61,lo:41,rain:0,d:"Clear and sunny. Cool morning, pleasant afternoon."},meals:[{type:"dinner",name:"Savoy",cuisine:"Neapolitan pizza",price:"¥1,000–3,600 / ~$7–24 pp",attire:"Anything goes",addr:"2-20-12 Azabu Juban, Minato-ku",lat:35.6535,lng:139.7365,hrs:"11:30–2:30 PM, 5:30–9:30 PM",note:"Wood-fired. Only Margherita & Marinara (+ off-menu tuna). 13-seat counter.",bk:1}],sleep:"Target 2–3 AM JST. Body thinks it's afternoon CDT. Don't fight it — Savoy is quick, whole night ahead.",after:[{n:"Gen Yamamoto",lat:35.6542,lng:139.735,d:"Omakase cocktail bar, 8 seats, seasonal fruit drinks. Reserve ahead."},{n:"Roppongi Hills Sky Deck",lat:35.6604,lng:139.7292,d:"Open-air rooftop at 270m. Stunning Tokyo Tower panorama."},{n:"Azabu-Juban Shotengai",lat:35.6547,lng:139.737,d:"Lantern-lit brick shopping street. Low-key first-night wander."},{n:"Late-night ramen",lat:35.6631,lng:139.7312,d:"Roppongi. Tonkotsu at 1 AM = rite of passage."}]},
+{date:"2026-03-15",dow:"Sun",label:"Night 2 · Jet-lagged",badge:"push",city:"tokyo1",wx:{ic:"⛅",hi:61,lo:46,rain:0,d:"Mostly sunny, some clouds. Mild."},pm:[{n:"Owl Cafe Akiba Fukurou",d:"45 min w/ 40 owls. Reservation only. Book ahead! 3 min from Akihabara Stn.",lat:35.6983,lng:139.771},{n:"Super Potato Akihabara",d:"Retro gaming holy grail. Famicom, Mega Drive, SNES, N64. 5th floor arcade. 3F–5F.",lat:35.6982,lng:139.771},{n:"Retro Game Camp",d:"Ground level. Great Sega Saturn/Dreamcast selection. Tax-free.",lat:35.6985,lng:139.77},{n:"Mandarake Akihabara",d:"Vintage Transformers, Gundam, tokusatsu. 8 floors of otaku paradise.",lat:35.6988,lng:139.771},{n:"BEEP",d:"Basement retro PC gaming. MSX, Sharp X68000, old arcade boards. Niche heaven.",lat:35.699,lng:139.77}],meals:[{type:"lunch",name:"Kamichiku",cuisine:"Handmade udon",price:"¥1,500–5,000 / ~$10–33 pp",attire:"Casual",addr:"2-14-18 Nezu, Bunkyo-ku",lat:35.721,lng:139.764,hrs:"11:30–2:30, 5:30–9:30 · ⚠ Closed Sun/Mon",note:"100-yr stone warehouse, garden view. Michelin Bib Gourmand. Confirm Sunday.",bk:1},{type:"dinner",name:"Kaikaya by the Sea",cuisine:"Izakaya seafood",price:"¥3,000–6,000 / ~$20–40 pp",attire:"Casual",addr:"23-7 Maruyamacho, Shibuya-ku",lat:35.658,lng:139.694,hrs:"5:30–11 PM",note:"Reggae, surfing décor, fresh catches. Beach-shack energy.",bk:1}],sleep:"Target 2–3 AM JST. Still jet-lagged. Kaikaya's energy segues into Shibuya nightlife.",after:[{n:"Shibuya Crossing at night",lat:35.6595,lng:139.7004,d:"More striking after 10 PM. Neon blazing."},{n:"Bar Ishinohana",lat:35.661,lng:139.697,d:"Shiitake-infused old fashioned with Hakushu whisky. 12 seats."},{n:"The Bellwood",lat:35.6625,lng:139.6955,d:"Kissaten-inspired with sushi counter. Bartender Atsushi Suzuki."},{n:"SG Club",lat:35.6615,lng:139.698,d:"Two-floor bar. Speakeasy basement. Famous piña colada. Until 2 AM+."}]},
+{date:"2026-03-16",dow:"Mon",label:"Night 3 · Omakase",badge:"hold",city:"tokyo1",wx:{ic:"🌥️",hi:57,lo:45,rain:0,d:"Cloudy, dry. Cooler than yesterday."},pm:[{n:"Cat Cafe MoCHA Shibuya",d:"Two-floor cat cafe, 33 cats. ¥200/10 min. 8F, 3 min from Shibuya Crossing.",lat:35.6612,lng:139.6975},{n:"Nintendo TOKYO",d:"Official Nintendo store — Shibuya Parco 6F. Exclusive merch, demo stations.",lat:35.6618,lng:139.6983}],meals:[{type:"lunch",name:"Seirinkan",cuisine:"Neapolitan pizza",price:"¥1,000–2,500 / ~$7–17 pp",attire:"Anything goes",addr:"2-8-11 Aobadai, Meguro-ku",lat:35.6485,lng:139.693,hrs:"11:30–3 PM, 6–10 PM",note:"Legendary Nakameguro pizza. Sister to Savoy.",bk:1},{type:"dinner",name:"Sushi Masuda",cuisine:"Omakase sushi",price:"¥20,000–35,000 / ~$133–233 pp",attire:"Smart casual required",addr:"Azabu-Juban area, Minato-ku",lat:35.654,lng:139.7355,hrs:"8:00 PM reservation",note:"Elite omakase. No T-shirts/shorts/sandals/fragrances. ~2 hrs.",bk:1}],sleep:"Target 12:30–1 AM. Marquee dinner — be sharp. Finishes ~10 PM. One quiet drink, then bed.",after:[{n:"Hulotte",lat:35.653,lng:139.7345,d:"Azabu cocktail bar. Stone, warm wood, dim light. One nightcap."},{n:"Walk to Tokyo Tower",lat:35.6586,lng:139.7454,d:"15 min stroll. Illuminated nightly. Shiba Park is peaceful."}]},
+{date:"2026-03-17",dow:"Tue",label:"Night 4 · Kyoto",badge:"hold",city:"kyoto",wx:{ic:"⛅",hi:61,lo:46,rain:0,d:"Partly cloudy. Comfortable for walking. Shinkansen day."},meals:[{type:"lunch",name:"Hikinikutocome",cuisine:"Hamburg steak",price:"¥1,500–3,000 / ~$10–20 pp",attire:"Casual",addr:"Central Kyoto",lat:35.005,lng:135.762,hrs:"Lunch service",note:"Famous juicy minced-beef patty on sizzling iron plate.",bk:1},{type:"dinner",name:"Monk",cuisine:"Craft beer & creative",price:"¥3,000–6,000 / ~$20–40 pp",attire:"Smart casual",addr:"Central Kyoto",lat:35.011,lng:135.756,hrs:"Evening",note:"Belgian-influenced kitchen. Excellent rotating beer list.",bk:1}],sleep:"Target 12:30–1 AM. Mid-trip anchor. Full Kyoto day tomorrow. Don't let beer pull past 1 AM.",after:[{n:"Pontocho Alley",lat:35.006,lng:135.7705,d:"Iconic lantern-lit lane along Kamogawa River."},{n:"L'Escamoteur Bar",lat:35.0065,lng:135.77,d:"Hidden speakeasy. Magician-bartender, theatrical cocktails."},{n:"Kamogawa River walk",lat:35.0055,lng:135.771,d:"Riverbank between Sanjo & Shijo. Peaceful, free."}]},
+{date:"2026-03-18",dow:"Wed",label:"Night 5 · Last Kyoto",badge:"flex",city:"kyoto",wx:{ic:"☀️",hi:64,lo:48,rain:0,d:"Sunny and warm for mid-March. Great day for exploring."},meals:[{type:"lunch",name:"TBD",cuisine:"",price:"",attire:"",addr:"",hrs:"",note:"Open Kyoto lunch slot.",bk:0},{type:"dinner",name:"Nishiki Market area",cuisine:"Casual grazing",price:"¥2,000–5,000 / ~$13–33 pp",attire:"Anything goes",addr:"Nishikikoji-dori, Nakagyo-ku",lat:35.005,lng:135.7645,hrs:"Stalls early; izakayas later",note:"Kyoto's 'Kitchen.' Skewers, dashimaki, pickles, sake.",bk:1}],sleep:"Target 1–2 AM. Flex night. Good night to drift later — nudge toward late-night zone.",after:[{n:"Kiyamachi Street bar hop",lat:35.007,lng:135.769,d:"Along Takase River. Lively, younger crowd. Past midnight."},{n:"Gion → Yasaka Shrine",lat:35.0036,lng:135.7785,d:"Lantern-lit geisha district. Shrine open 24 hrs."},{n:"Bar Exploring Kyoto",lat:35.003,lng:135.776,d:"Hidden whisky bar in Gion back streets."}]},
+{date:"2026-03-19",dow:"Thu",label:"Night 6 · Ginza",badge:"hold",city:"tokyo2",wx:{ic:"🌧️",hi:63,lo:54,rain:1.8,d:"Light rain likely. Bring umbrella."},sakura:"🌸 Tokyo flowering begins today! First blooms opening across the city. Check Ueno Park, Chidorigafuchi.",meals:[{type:"lunch",name:"Open slot",cuisine:"",price:"",attire:"",addr:"",hrs:"",note:"Arrival from Kyoto. Grab something near hotel.",bk:0},{type:"dinner",name:"Sushi Kanesaka",cuisine:"Omakase sushi",price:"¥25,000–45,000 / ~$167–300 pp",attire:"Smart casual enforced",addr:"Ginza 8-chome, Chuo-ku",lat:35.6685,lng:139.761,hrs:"Evening reservation",note:"Premier Ginza omakase. Trained at Jiro. No T-shirts/shorts/sandals/fragrances.",bk:1}],sleep:"Target 12:30–1 AM. Flagship omakase. Be present. One refined nightcap max.",after:[{n:"Star Bar Ginza",lat:35.671,lng:139.765,d:"Legendary basement bar on Namiki-dori. Hand-carved ice."},{n:"Ginza Music Bar",lat:35.67,lng:139.7635,d:"4th floor listening bar. 3,000+ vinyl records."},{n:"Old Imperial Bar",lat:35.672,lng:139.758,d:"Frank Lloyd Wright-inspired. Century-old cocktail tradition."}]},
+{date:"2026-03-20",dow:"Fri",label:"Night 7 · Social",badge:"push",city:"tokyo2",wx:{ic:"🌦️",hi:61,lo:48,rain:2.8,d:"Scattered showers possible. Clearing later."},sakura:"🌸 Day 2 of flowering. More trees opening up. Good time for a morning sakura walk before lunch.",pm:[{n:"Sanrio World Ginza",d:"World's largest Sanrio flagship. Two floors. Hello Kitty + 450 characters. Nishi Ginza Dept Store.",lat:35.6745,lng:139.763},{n:"Kyukyodo Ginza",d:"Incense & washi paper since 1663. Imperial Palace supplier. Beautiful small gifts.",lat:35.6718,lng:139.765},{n:"Ginza Sony Park",d:"New (2025) Sony building. Interactive exhibits, aibo robots, PlayStation demos.",lat:35.6718,lng:139.764}],meals:[{type:"lunch",name:"Iruca / Oreryu Ramen",cuisine:"Ramen",price:"¥1,000–1,500 / ~$7–10 pp",attire:"Anything goes",addr:"Various locations",lat:35.669,lng:139.764,hrs:"Lunch hours",note:"Iruca: creative tsukemen. Oreryu: clean shio (salt) broth.",bk:1},{type:"dinner",name:"With Shinji — poss. Masa Ishibashi",cuisine:"Omakase / TBD",price:"¥15,000–30,000 / ~$100–200 pp",attire:"Smart casual",addr:"TBD — Shinji's pick",hrs:"Flexible",note:"Social dinner. Go with the flow.",bk:1}],sleep:"Target 2–3 AM. Intentional drift-late. Pull body clock toward CDT. Invest in late-night Tokyo.",after:[{n:"Golden Gai (Shinjuku)",lat:35.694,lng:139.7035,d:"~200 tiny bars in six alleys. 5–8 seats each. Best 10 PM–2 AM."},{n:"Bar Trench / Triad / Tram",lat:35.6465,lng:139.7095,d:"Ebisu. Three connected bars. Absinthe cocktails. Asia's 50 Best."},{n:"Late-night ramen",lat:35.6924,lng:139.7013,d:"Fuunji tsukemen in Shinjuku, or wherever you end up."}]},
+{date:"2026-03-21",dow:"Sat",label:"Night 8 · Final",badge:"flex",city:"tokyo2",wx:{ic:"🌥️",hi:59,lo:45,rain:0,d:"Cloudy but dry. Cooler."},sakura:"🌸 Day 3 of flowering. Trees progressing nicely. Full bloom forecast: Mar 27. Enjoy early hanami today!",meals:[{type:"all day",name:"No reservations",cuisine:"",price:"",attire:"",addr:"",hrs:"",note:"Free day. Revisit a favorite, depachika food hall, or pack light.",bk:0}],sleep:"Target 2–3 AM+. SQ12 tomorrow afternoon. Staying up late = perfect return flight setup. Guilt-free.",after:[{n:"Revisit your favorite",d:"Golden Gai again, Star Bar, last Shibuya walk."},{n:"Kabukicho / Shinjuku",lat:35.6951,lng:139.7029,d:"Energy and neon all night."},{n:"Konbini beer + quiet walk",d:"Grab an Asahi. Simple farewell."}]}
 ];
 var TPOI=[
 {n:"Airbnb — Akasaka",lat:35.6744,lng:139.7368,t:"hotel",s:"tokyo1",who:"Joel",days:["2026-03-14","2026-03-15","2026-03-16"]},
 {n:"ANA InterContinental",lat:35.6722,lng:139.7383,t:"hotel",s:"tokyo1",who:"Others",days:["2026-03-14","2026-03-15","2026-03-16"]},
 {n:"Hyatt Centric Ginza",lat:35.6706,lng:139.7649,t:"hotel",s:"tokyo2",who:"Joel",days:["2026-03-19","2026-03-20","2026-03-21"]},
-{n:"Imperial Hotel",lat:35.6723,lng:139.7582,t:"hotel",s:"tokyo2",who:"Others",days:["2026-03-19","2026-03-20","2026-03-21"]}
+{n:"Imperial Hotel",lat:35.6723,lng:139.7582,t:"hotel",s:"tokyo2",who:"Others",days:["2026-03-19","2026-03-20","2026-03-21"]},
+{n:"🌸 Ueno Park",lat:35.7146,lng:139.7732,t:"sakura",s:"tokyo2",days:["2026-03-19","2026-03-20","2026-03-21"],tip:"1000+ trees. Sakura festival w/ lanterns & food stalls. Go before 9 AM to avoid crowds."},
+{n:"🌸 Chidorigafuchi",lat:35.6918,lng:139.7490,t:"sakura",s:"tokyo2",days:["2026-03-19","2026-03-20","2026-03-21"],tip:"700m moat walkway by Imperial Palace. Rowboat rentals (¥800/30min). Illuminated at night. Arrive early!"},
+{n:"🌸 Shinjuku Gyoen",lat:35.6852,lng:139.7100,t:"sakura",s:"tokyo2",days:["2026-03-19","2026-03-20","2026-03-21"],tip:"65+ varieties, 1000 trees. ¥500 entry. 9AM opening — go at open for space. No alcohol allowed. Weekday mornings best."},
+{n:"🌸 Meguro River",lat:35.6440,lng:139.6990,t:"sakura",s:"tokyo2",days:["2026-03-20","2026-03-21"],tip:"800 trees along 3.8km canal. Lantern-lit at night — pink reflections on water. Best after sunset."},
+{n:"🌸 Sumida Park",lat:35.7120,lng:139.8010,t:"sakura",s:"tokyo2",days:["2026-03-20","2026-03-21"],tip:"600+ trees along Sumida River. Skytree backdrop. Quieter than Ueno. Yakatabune boat rides available."}
 ];
 var KPOI=[
 {n:"Ace Hotel Kyoto",lat:35.0116,lng:135.7588,t:"hotel",s:"kyoto",who:"Everyone",days:["2026-03-17","2026-03-18"]}
@@ -172,6 +197,36 @@ function switchTab(id){
   document.getElementById('pane-'+id).classList.add('on');
   if(id==='tokyo')setTimeout(function(){initMap('tokyo',TPOI,[35.665,139.735],12)},120);
   if(id==='kyoto')setTimeout(function(){initMap('kyoto',KPOI,[35.005,135.77],15)},120);
+  if(id==='travel')renderTravel();
+}
+
+function renderTravel(){
+  var el=document.getElementById('pane-travel'),h='';
+
+  // Flights
+  h+='<div class="tcard"><h3>✈️ Outbound Flight</h3>';
+  h+='<div class="trow"><div><span class="lbl">Route</span><br><span class="val">LAX → NRT</span></div><div style="text-align:right"><span class="lbl">Flight</span><br><span class="val">SQ 11</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Depart</span><br><span class="val">Sat Mar 14, 1:25 PM</span><br><span class="sub">Los Angeles Intl · Terminal B</span></div><div style="text-align:right"><span class="lbl">Arrive</span><br><span class="val">Sun Mar 15, 5:20 PM</span><br><span class="sub">Narita · Terminal 1</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Duration</span><br><span class="val">11h 55m</span></div><div style="text-align:right"><span class="lbl">Class</span><br><span class="val">Business (D)</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Aircraft</span><br><span class="val">Boeing 777-300ER</span></div><div style="text-align:right"><span class="lbl">Status</span><br><span class="val" style="color:#2e7d32">Confirmed ✓</span></div></div>';
+  h+='</div>';
+
+  h+='<div class="tcard"><h3>✈️ Return Flight</h3>';
+  h+='<div class="trow"><div><span class="lbl">Route</span><br><span class="val">NRT → LAX</span></div><div style="text-align:right"><span class="lbl">Flight</span><br><span class="val">SQ 12</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Depart</span><br><span class="val">Sun Mar 22, 6:15 PM</span><br><span class="sub">Narita · Terminal 1</span></div><div style="text-align:right"><span class="lbl">Arrive</span><br><span class="val">Sun Mar 22, 11:55 AM</span><br><span class="sub">Los Angeles Intl · Terminal B</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Duration</span><br><span class="val">9h 40m</span></div><div style="text-align:right"><span class="lbl">Class</span><br><span class="val">Business (D)</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Aircraft</span><br><span class="val">Boeing 777-300ER</span></div><div style="text-align:right"><span class="lbl">Status</span><br><span class="val" style="color:#2e7d32">Confirmed ✓</span></div></div>';
+  h+='</div>';
+
+  // Shinkansen
+  h+='<div class="tcard"><h3>🚅 Shinkansen · Tokyo → Kyoto</h3>';
+  h+='<div class="trow"><div><span class="lbl">Train</span><br><span class="val">NOZOMI 251</span><br><span class="sub">Series N700 · 16 cars</span></div><div style="text-align:right"><span class="lbl">Date</span><br><span class="val">Tue Mar 17</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Depart</span><br><span class="val">Tokyo · 10:00 AM</span></div><div style="text-align:right"><span class="lbl">Arrive</span><br><span class="val">Kyoto · 12:15 PM</span></div></div>';
+  h+='<div class="trow"><div><span class="lbl">Car / Seats</span><br><span class="val">Green Car 9</span><br><span class="sub">Seat 10-A (Visa ...8063) · Seat 11-B (Amex ...1007)</span></div><div style="text-align:right"><span class="lbl">Price</span><br><span class="val">¥18,840 ea</span><br><span class="sub">~$120 · smart EX</span></div></div>';
+  h+='<div class="trow"><div><span class="sub" style="color:#e65100">⚠ Seat 11-B reservation not yet finalized — confirm before travel</span></div></div>';
+  h+='</div>';
+
+  el.innerHTML=h;
 }
 
 function pick(date){sel=date;renderCal()}
@@ -198,6 +253,7 @@ function renderCal(){
     var is=sel===d.date,sc=CC[d.city];
     h+='<button class="cb" style="'+(is?'background:'+sc+';border-color:'+sc+';color:#fff':'')+'" onclick="pick(\''+d.date+'\')">';
     h+='<div class="dow">'+d.dow+'</div><div class="num">'+gdn(d)+'</div><div class="ct">'+CL[d.city]+'</div>';
+    if(d.wx)h+='<div class="wx">'+d.wx.ic+' '+d.wx.hi+'°/'+d.wx.lo+'°F</div>';
     h+='<div class="bd" style="background:'+BC[d.badge]+'"></div></button>';
   });
   h+='</div>';
@@ -226,6 +282,16 @@ function renderCal(){
     });
 
     h+='<div class="slp" style="border-left:3px solid '+BC[day.badge]+'"><strong>🌙</strong> '+day.sleep+'</div>';
+    if(day.wx){
+      h+='<div class="wxr"><span class="wxi">'+day.wx.ic+'</span> <strong>'+day.wx.hi+'°F / '+day.wx.lo+'°F</strong>';
+      if(day.wx.rain>0)h+=' · <span style="color:#1565c0">🌧 '+day.wx.rain+'mm</span>';
+      h+=' — '+day.wx.d;
+      if(day.wx.live)h+='<div style="font-size:9px;color:#1565c0;margin-top:3px;font-weight:600">⚡ Live forecast via Open-Meteo</div>';
+      h+='</div>';
+    }
+    if(day.sakura){
+      h+='<div class="skr">'+day.sakura+'</div>';
+    }
     if(day.pm&&day.pm.length){
       h+='<div class="adt">☀ Afternoon</div>';
       day.pm.forEach(function(p){var lnk=p.lat&&p.lng?gm(p.n,p.lat,p.lng):null;var nm=lnk?'<a href="'+lnk+'" target="_blank" rel="noopener">'+p.n+' ↗</a>':p.n;h+='<div class="adi"><b>'+nm+'</b> <em>— '+p.d+'</em></div>'});
@@ -251,11 +317,12 @@ var mapFilter={tokyo:null,kyoto:null};
 
 function poiColor(p){
   if(p.t==='hotel')return '#1a1a2e';
+  if(p.t==='sakura')return '#e91e63';
   if(p.t==='pm')return '#d35400';
   if(p.t==='rest')return CC[p.s];
   return '#999';
 }
-function poiLabel(p){return p.t==='hotel'?'Hotel':p.t==='rest'?'Restaurant':p.t==='pm'?'Afternoon':p.t==='night'?'Nightlife':''}
+function poiLabel(p){return p.t==='hotel'?'Hotel':p.t==='rest'?'Restaurant':p.t==='pm'?'Afternoon':p.t==='night'?'Nightlife':p.t==='sakura'?'Cherry Blossoms':''}
 
 function initMap(id,pois,center,zoom){
   var el=document.getElementById('map-'+id);
@@ -280,11 +347,15 @@ function updateMapMarkers(id,pois){
     var c=poiColor(p);
     var gmUrl=isKyoto?gmk(p.n):gm(p.n,p.lat,p.lng);
     var pop='<b>'+p.n+'</b>'+(p.who?' <small>('+p.who+')</small>':'')+'<br><small style="color:'+CC[p.s]+'">'+CL[p.s]+'</small> · <small>'+poiLabel(p)+'</small>';
+    if(p.tip)pop+='<br><small style="color:#880e4f">'+p.tip+'</small>';
     if(p.days&&p.days.length)pop+='<br><small>Day: '+p.days.map(function(d){return d.split('-')[2]}).join(', ')+'</small>';
     pop+='<br><a href="'+gmUrl+'" target="_blank" rel="noopener" style="font-size:11px">Google Maps ↗</a>';
     if(p.t==='hotel'){
       var ic=L.divIcon({className:'',html:'<div style="width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid '+c+';filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))"></div>',iconSize:[14,12],iconAnchor:[7,12]});
       lg.addLayer(L.marker([p.lat,p.lng],{icon:ic}).bindPopup(pop));
+    }else if(p.t==='sakura'){
+      var sic=L.divIcon({className:'',html:'<div style="font-size:18px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.2))">🌸</div>',iconSize:[20,20],iconAnchor:[10,10]});
+      lg.addLayer(L.marker([p.lat,p.lng],{icon:sic}).bindPopup(pop));
     }else{
       var r=p.t==='pm'?8:p.t==='rest'?7:5;
       var fo=p.t==='night'?.4:.85;
@@ -324,6 +395,7 @@ function renderMapPanel(id,pois,isKyoto){
     h+='<div class="mlr"><div style="width:9px;height:9px;border-radius:50%;background:var(--t2)"></div> Restaurant (II)</div>';
     h+='<div class="mlr"><div style="width:9px;height:9px;border-radius:50%;background:#d35400"></div> Afternoon</div>';
     h+='<div class="mlr"><div style="width:9px;height:9px;border-radius:50%;background:#999;opacity:.4"></div> Nightlife</div>';
+    h+='<div class="mlr"><div style="font-size:12px;line-height:1">🌸</div> Cherry Blossoms</div>';
     h+='</div>';
   }else{
     h+='<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">';
@@ -335,10 +407,10 @@ function renderMapPanel(id,pois,isKyoto){
 
   // filtered POI list
   var visPois=filt?pois.filter(function(p){return !p.days||p.days.indexOf(filt)!==-1}):pois;
-  ['hotel','rest','pm','night'].forEach(function(t){
+  ['hotel','rest','pm','sakura','night'].forEach(function(t){
     var items=visPois.filter(function(p){return p.t===t});
     if(!items.length)return;
-    var label=t==='rest'?'Restaurants & Dining':t==='night'?'Nightlife':t==='pm'?'Afternoon Activities':'Hotels';
+    var label=t==='rest'?'Restaurants & Dining':t==='night'?'Nightlife':t==='pm'?'Afternoon Activities':t==='sakura'?'🌸 Cherry Blossom Spots':'Hotels';
     h+='<div class="mlst">'+label+'</div>';
     items.forEach(function(p){
       var dc=poiColor(p);
@@ -361,7 +433,7 @@ function renderMapPanel(id,pois,isKyoto){
 function initApp(){
   if(window._appInit)return;window._appInit=true;
   var tb=document.getElementById('tabs');
-  tb.innerHTML='<button class="tab on" id="t-calendar" onclick="switchTab(\'calendar\')">📅 Calendar</button><button class="tab" id="t-tokyo" onclick="switchTab(\'tokyo\')">🗼 Tokyo</button><button class="tab" id="t-kyoto" onclick="switchTab(\'kyoto\')">⛩ Kyoto</button>';
+  tb.innerHTML='<button class="tab on" id="t-calendar" onclick="switchTab(\'calendar\')">📅 Calendar</button><button class="tab" id="t-tokyo" onclick="switchTab(\'tokyo\')">🗼 Tokyo</button><button class="tab" id="t-kyoto" onclick="switchTab(\'kyoto\')">⛩ Kyoto</button><button class="tab" id="t-travel" onclick="switchTab(\'travel\')">✈️ Travel</button>';
   // Set up map panes with static map div + dynamic content div
   document.getElementById('pane-tokyo').innerHTML='<div class="mapw" id="map-tokyo"></div><div id="below-tokyo"></div>';
   document.getElementById('pane-kyoto').innerHTML='<div class="mapw" id="map-kyoto"></div><div id="below-kyoto"></div>';
@@ -371,6 +443,84 @@ function initApp(){
 }
 // Auto-init if already authenticated
 if(sessionStorage.getItem('jp26')==='1')initApp();
+
+// ── Live Weather from Open-Meteo (free, no API key, CORS-friendly) ──
+function wxIcon(code){
+  if(code<=1)return '☀️';
+  if(code<=3)return '⛅';
+  if(code<=48)return '🌥️';
+  if(code<=57)return '🌧️';
+  if(code<=67)return '🌦️';
+  if(code<=77)return '🌨️';
+  if(code<=82)return '🌧️';
+  if(code<=86)return '🌨️';
+  return '⛈️';
+}
+function wxDesc(code){
+  if(code<=1)return 'Clear skies';
+  if(code===2)return 'Partly cloudy';
+  if(code===3)return 'Overcast';
+  if(code<=48)return 'Foggy';
+  if(code<=55)return 'Light drizzle';
+  if(code<=57)return 'Freezing drizzle';
+  if(code<=63)return 'Rain';
+  if(code<=67)return 'Freezing rain';
+  if(code<=75)return 'Snow';
+  if(code<=77)return 'Snow grains';
+  if(code<=82)return 'Rain showers';
+  if(code<=86)return 'Snow showers';
+  return 'Thunderstorm';
+}
+function fetchLiveWeather(){
+  var locs=[
+    {lat:35.6762,lng:139.6503,city:'tokyo'},
+    {lat:35.0116,lng:135.7681,city:'kyoto'}
+  ];
+  var tripDates=DAYS.map(function(d){return d.date});
+  var start=tripDates[0],end=tripDates[tripDates.length-1];
+  var fetched=0;
+  locs.forEach(function(loc){
+    var url='https://api.open-meteo.com/v1/forecast?latitude='+loc.lat+'&longitude='+loc.lng
+      +'&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode'
+      +'&temperature_unit=fahrenheit&timezone=Asia/Tokyo'
+      +'&start_date='+start+'&end_date='+end;
+    fetch(url).then(function(r){return r.json()}).then(function(data){
+      if(!data.daily)return;
+      var dates=data.daily.time;
+      dates.forEach(function(dt,i){
+        DAYS.forEach(function(day){
+          var isMatch=day.date===dt;
+          var cityMatch=(loc.city==='tokyo'&&(day.city==='tokyo1'||day.city==='tokyo2'))||(loc.city==='kyoto'&&day.city==='kyoto');
+          if(isMatch&&cityMatch){
+            var code=data.daily.weathercode[i];
+            day.wx={
+              ic:wxIcon(code),
+              hi:Math.round(data.daily.temperature_2m_max[i]),
+              lo:Math.round(data.daily.temperature_2m_min[i]),
+              rain:Math.round(data.daily.precipitation_sum[i]*10)/10,
+              d:wxDesc(code)+(data.daily.precipitation_sum[i]>0?' · Bring umbrella.':''),
+              live:true
+            };
+          }
+        });
+      });
+      fetched++;
+      if(fetched===locs.length){
+        if(curTab==='calendar')renderCal();
+        // Add live badge
+        var el=document.querySelector('.wxr');
+        if(el&&!document.querySelector('.wx-live-tag')){
+          var tag=document.createElement('div');
+          tag.className='wx-live-tag';
+          tag.style.cssText='font-size:9px;color:#1565c0;text-align:right;margin-top:2px;font-weight:600';
+          tag.textContent='⚡ Live forecast from Open-Meteo';
+        }
+      }
+    }).catch(function(e){console.log('Weather fetch failed for '+loc.city+':',e)});
+  });
+}
+// Fetch live weather on load (will silently override static data if API is reachable)
+setTimeout(fetchLiveWeather,500);
 </script>
 </body>
 </html>
